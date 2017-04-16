@@ -24,9 +24,12 @@ namespace OrleansSiloHost
         private static int StartSilo(string[] args)
         {
             // define the cluster configuration
-            var config = ClusterConfiguration.LocalhostPrimarySilo();
-            config.AddMemoryStorageProvider();
+            //var config = ClusterConfiguration.LocalhostPrimarySilo();
+            //config.AddMemoryStorageProvider();
             // config.Defaults.DefaultTraceLevel = Orleans.Runtime.Severity.Verbose3;
+
+            var config = new ClusterConfiguration();
+            config.LoadFromFile("OrleansConfiguration.xml");
 
             hostWrapper = new OrleansHostWrapper(config, args);
             return hostWrapper.Run();

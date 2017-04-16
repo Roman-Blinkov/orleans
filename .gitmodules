@@ -1,0 +1,4 @@
+[submodule "npgsql"]
+	path = npgsql
+	url = https://github.com/npgsql/npgsql.git
+	branch = dev

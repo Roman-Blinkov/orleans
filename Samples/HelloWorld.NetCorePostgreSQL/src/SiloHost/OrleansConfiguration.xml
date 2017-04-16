@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<OrleansConfiguration xmlns="urn:orleans">
+	<Globals>
+		<StorageProviders>
+			<!--<Provider Name="SqlStore" Type="Orleans.Storage.AdoNetStorageProvider"
+					  DataConnectionString="Server=10.211.55.2;Database=OrleansHello;Userid=postgres;Password=pwd;"
+					  AdoInvariant="Npgsql"
+                />-->
+
+		</StorageProviders>
+
+
+		<SystemStore SystemStoreType ="SqlServer"
+		             DeploymentId="OrleansTest"
+		             DataConnectionString="Server=10.211.55.2;Database=OrleansHello;Userid=postgres;Password=pwd;Timeout=600;"
+		             AdoInvariant="Npgsql" />
+
+	</Globals>
+	<Defaults>
+		<Networking Address="localhost" Port="11111" />
+		<ProxyingGateway Address="localhost" Port="40000" />
+
+	</Defaults>
+
+</OrleansConfiguration>
